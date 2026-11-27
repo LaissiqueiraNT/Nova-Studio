@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Nova guia</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main id="stage" aria-label="Sua nova guia">
+    <div id="wallpaper" aria-hidden="true"><video id="background-video" muted loop playsinline hidden></video></div>
+    <div id="overlay" aria-hidden="true"></div>
+    <div id="date-widget" class="widget text-widget" data-widget="date"><div id="date-text" class="text-content"></div></div>
+    <div id="clock-widget" class="widget text-widget" data-widget="clock"><div id="clock-text" class="text-content"></div></div>
+    <div id="logo-widget" class="widget text-widget" data-widget="logo"><div id="logo-text" class="text-content"></div></div>
+    <div id="search-widget" class="widget" data-widget="search">
+      <form id="search-form" role="search">
+        <span id="search-icon" class="search-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg></span>
+        <input id="search-input" type="text" name="q" placeholder="Pesquisar no Google" aria-label="Pesquisar na web" autocomplete="off" spellcheck="false">
+        <button id="search-submit" type="submit" title="Pesquisar" aria-label="Pesquisar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+      </form>
+      
+    </div>
+    <div id="links-widget" class="widget" data-widget="links"><nav id="quick-links" aria-label="Atalhos favoritos"></nav></div>
+    <div id="note-widget" class="widget text-widget" data-widget="note"><div id="note-text" class="text-content"></div></div>
+    <div id="guide-x" class="snap-guide guide-x" aria-hidden="true" hidden><span></span></div>
+    <div id="guide-y" class="snap-guide guide-y" aria-hidden="true" hidden><span></span></div>
+    <div id="editing-tip" hidden>Modo de edição <span>Arraste para mover • Duplo clique para personalizar • Shift: livre</span></div>
+    <button id="open-settings" class="settings-trigger" type="button" aria-label="Personalizar nova guia" aria-expanded="false" title="Personalizar nova guia (Alt + Shift + P)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="9" cy="7" r="2" fill="currentColor"/><circle cx="15" cy="12" r="2" fill="currentColor"/><circle cx="8" cy="17" r="2" fill="currentColor"/></svg></button>
+    <div id="full-edit-toolbar" hidden aria-label="Controles de edição">
+      <button id="back-settings" type="button" class="secondary-button" title="Reabrir painel de personalização"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="15" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg>Ajustes</button>
+      <button id="full-done" type="button" class="primary-button">Concluir</button>
+    </div>
+  </main>
+  <aside id="settings" aria-label="Painel de personalização" hidden>
+    <header class="panel-header">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">&#10022;</span><div><strong>Nova Studio</strong><span>Seu navegador, do seu jeito.</span></div></div>
+      <div class="header-actions"><button id="full-edit" type="button" class="icon-button" title="Mover em tela cheia" aria-label="Mover em tela cheia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button><button id="close-settings" type="button" class="icon-button" title="Fechar" aria-label="Fechar painel">&#10005;</button></div>
+    </header>
+    <nav id="tabs" aria-label="Categorias de personalização"></nav>
+    <div id="panel-content" tabindex="-1"></div>
+    <footer class="panel-footer"><div class="save-label"><span></span> <span id="save-status">Salvo neste dispositivo</span></div><button id="done" type="button" class="primary-button">Concluir</button></footer>
+  </aside>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
